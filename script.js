@@ -2,6 +2,9 @@
     OBJETO
     - Uma coleção de dados e/ou funcionalidades;
     - Pode ter propriedades e métodos.
+
+
+    lembrando que os dois pontos : substituem o sinal de igual = dentro de um objeto.
 */
 
 // Cria um objeto vazio.
@@ -53,6 +56,30 @@ const usuario = {
     // console.log(`Olá ${usuario.name}`);
     console.log(`Olá ${this.email}`); //O THIS NÃO FUNCIONA COM ARROW FUNCION.
   },
+  //tentar acostumar a usar função anonima dentro de objetos, pois o "this" não funciona com arrow funcion por algum motivo irrelevante.
 };
 
 usuario.message();
+
+const product = {
+  name: "Teclado",
+  quantity: 100,
+};
+
+// Acessando a propriedade do objeto.
+console.log(product.name);
+
+// Atualiza o valor de uma propriedade.
+console.log(product.quantity); // exibindo antes de atualizar.
+product.quantity = 90; // ATUALIZANDO...
+console.log(product.quantity); // exibindo depois de atualizar.
+
+console.log(product.name); // exibindo antes de atualizar.
+product.name = "Mouse"; // ATUALIZANDO...
+console.log(product.name); // exibindo depois de atualizar.
+
+// Notação de colchetes
+console.log(product["quantity"]); // exibindo antes de atualizar.
+product["quantity"] = 50; // ATUALIZANDO...
+console.log(product["quantity"]); // exibindo depois de atualizar.
+console.log(product);
