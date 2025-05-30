@@ -30,3 +30,18 @@ const user = {
     console.log("Oi Jonas");
   },
 };
+
+// Acessando propriedades e metodos usando a notação de ponto.
+
+console.log(user.email);
+
+// Acessando propriedade de objetos.
+console.log(user.name.surname);
+
+// Executa o método do objeto.
+user.message();
+
+// Notação de colchetes
+console.log(user["email"]);
+console.log(user["name"]["firt_name"]);
+user["message"]();
