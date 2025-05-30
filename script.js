@@ -45,3 +45,14 @@ user.message();
 console.log(user["email"]);
 console.log(user["name"]["firt_name"]);
 user["message"]();
+
+const usuario = {
+  name: "João",
+  email: "jonasrpnstudy@gmail.com",
+  message: function () {
+    // console.log(`Olá ${usuario.name}`);
+    console.log(`Olá ${this.email}`); //O THIS NÃO FUNCIONA COM ARROW FUNCION.
+  },
+};
+
+usuario.message();
