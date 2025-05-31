@@ -83,3 +83,43 @@ console.log(product["quantity"]); // exibindo antes de atualizar.
 product["quantity"] = 50; // ATUALIZANDO...
 console.log(product["quantity"]); // exibindo depois de atualizar.
 console.log(product);
+
+/*
+    OPTIONAL CHAINING (?.) - encadeamento opcional
+    Se a propriedade ou função chamada é nullish 
+    (null or undefined), a expressão retorna 
+    undefined em vez de gerar um erro.
+
+    Útil ao explorar o conteúdo de um objeto 
+    quando não existe garantia da existência de 
+    determinadas propriedades obrigatórias.
+
+        Por exemplo, para verificar se um usuário 
+    possui uma foto opcional:
+    user?.foto
+
+    Isso evita erro caso o objeto 'user' ou a 
+    propriedade 'foto' não existam.
+*/
+
+const userChaining = {
+  id: 1,
+  name: "jonas",
+  /*
+  address: {
+    street: "Avenida Brasil",
+    city: "São Paulo",
+    geo: {
+      latitude: 47.808,
+      longitude: 17.5674,
+    },
+  }, */
+  /*
+  message: function () {
+    console.log(`Olá ${this.name} `);
+  },*/
+};
+console.log(userChaining?.address);
+console.log(userChaining?.address?.street);
+
+userChaining.message?.();
