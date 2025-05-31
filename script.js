@@ -123,3 +123,23 @@ console.log(userChaining?.address);
 console.log(userChaining?.address?.street);
 
 userChaining.message?.();
+
+/*
+OPERADOR DE COALESCÊNCIA NULA (??)
+Operador lógico que retorna o seu operando do 
+lado direito quando o seu operador do lado 
+esquerdo é null ou undefined. Caso contrário, 
+ele retorna o seu operando do lado esquerdo.
+*/
+
+let content = null;
+
+// Só funciona com NULL e UNDEFINED
+console.log(content ?? "Conteúdo padrão");
+
+const userCoalecencia = {
+  name: "Jonas",
+  picture: undefined,
+};
+
+console.log(userCoalecencia.picture ?? "default.png");
