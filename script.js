@@ -136,10 +136,63 @@ let content = null;
 
 // Só funciona com NULL e UNDEFINED
 console.log(content ?? "Conteúdo padrão");
+// const userCoalecencia = {
+//   name: "Jonas",
+//   picture: undefined,
+// };
 
-const userCoalecencia = {
-  name: "Jonas",
-  picture: undefined,
-};
+// console.log(userCoalecencia.picture ?? "default.png");
 
-console.log(userCoalecencia.picture ?? "default.png");
+// Forma de criar explicitamente oobjeto  e sua propriedades dentro de sua função construtoras.
+function createProduct(name) {
+  const product1 = {};
+
+  product1.name = name;
+  product1.details = function () {
+    console.log(`O nome do produto é ${this.name}`);
+  };
+  return product1;
+}
+
+// O new cria um novo objeto utilizando a estrutura da função construtora.
+const product2 = new createProduct("Teclado");
+console.log(product2.name);
+product2.details();
+
+const product3 = new createProduct("Mouse");
+console.log(product3.name);
+product3.details();
+
+// console.log(product2 === product3);
+
+// Exemplos de funções construtoras disponíveis no próprio Javascript.
+
+let myName = new String("Jonas");
+console.log(myName);
+
+let price = "40.6".replace(".", "");
+console.log(price);
+
+let date = new Date("2025-1-1");
+console.log(date);
+
+// Forma mais parecida com declaração de classes
+function Person(name) {
+  this.name = name;
+  this.message = function () {
+    console.log(`Olá, ${this.name}`);
+  };
+}
+
+const person1 = new Person("Jonas");
+console.log(person1.name);
+person1.message();
+
+const person2 = new Person("Andressa");
+console.log(person2.name);
+person2.message();
+
+/* Isso tudo é muito importante para aprender o que acontece por "baixo dos panos"
+quando utilizamos um método pronto do javascript, e também
+como fazemos para criar nossas proprias funções para modificar dinamicamente os nossos
+objetos. */
